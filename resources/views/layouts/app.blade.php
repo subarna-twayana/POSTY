@@ -5,8 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Posty</title>
+    @vite('resources/css/output.css')
+    {{-- <link href="/resources/css/output.css" rel="stylesheet"> --}}
 </head>
-<body>
+<body class="bg-gray-300">
+    <nav class="p-6 bg-white flex justify-between mb-5">
+        <ul class="flex items-center">
+            <li>
+                <a href="" class="p-3">Home</a>
+            </li>
+            <li>
+                <a href="" class="p-3">Dashboard</a>
+            </li>
+            <li>
+                <a href="" class="p-3">Post</a>
+            </li>
+        </ul>
+
+        <ul class="flex items-center">
+            <li>
+                <a href="" class="p-3">Subu</a>
+            </li>
+            <li>
+                <a href="" class="p-3">Login</a>
+            </li>
+            <li>
+                <a href="" class="p-3">Register</a>
+            </li>
+            <li>
+                <a href="" class="p-3">Logout</a>
+            </li>
+        </ul>
+    </nav>
+
     @yield('content')
 </body>
 </html>
