@@ -15,6 +15,9 @@
                 <a href="" class="p-3">Home</a>
             </li>
             <li>
+                <a href="" class="p-3">Demo</a>
+            </li>
+            <li>
                 <a href="" class="p-3">Dashboard</a>
             </li>
             <li>
