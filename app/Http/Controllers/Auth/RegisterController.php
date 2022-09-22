@@ -13,10 +13,14 @@ class RegisterController extends Controller
     {
         return view('auth.register');
     }
+
+    //validate
+    //store user
+    //sign the user in
+    //redirect
     public function store(Request $request)
     {
-        // dd($request->email);
-        $this->validate($request,[
+        $this->validate($request, [
             'name' => 'required|max:225',
             'username' => 'required|max:225',
             'email' => 'required|max:225',
@@ -26,13 +30,11 @@ class RegisterController extends Controller
             'name' => $request->name,
             'username' => $request->username,
             'email' => $request->email,
-            'password' =>Hash::make($request->password),
+            'password' => Hash::make($request->password),
         ]);
 
+        auth()->attempt($request->only('email', 'password'));
+
         return redirect()->route('dashboard');
-        //validate
-         //store user
-        //sign the user in
-        //redirect
     }
 }
