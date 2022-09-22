@@ -15,9 +15,6 @@
                 <a href="" class="p-3">Home</a>
             </li>
             <li>
-                <a href="" class="p-3">Demo</a>
-            </li>
-            <li>
                 <a href="" class="p-3">Dashboard</a>
             </li>
             <li>
@@ -26,18 +23,26 @@
         </ul>
 
         <ul class="flex items-center">
+            @auth
             <li>
                 <a href="" class="p-3">Subu</a>
             </li>
             <li>
-                <a href="" class="p-3">Login</a>
+                <form action="{{ route('logout') }}" method="post" class="p-3 inline">
+                    @csrf
+                    <button type ="submit" class="p-3"> Logout </button>
+                </form>
+            </li>
+            @endauth
+
+            @guest
+            <li>
+                <a href="{{ route('login') }}" class="p-3">Login</a>
             </li>
             <li>
                 <a href="{{ route('register') }}" class="p-3">Register</a>
             </li>
-            <li>
-                <a href="" class="p-3">Logout</a>
-            </li>
+            @endguest
         </ul>
     </nav>
 
