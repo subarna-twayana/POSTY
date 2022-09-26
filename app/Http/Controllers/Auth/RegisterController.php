@@ -23,7 +23,7 @@ class RegisterController extends Controller
     //store user
     //sign the user in
     //redirect
-    public function store(Request $request)
+    public function register(Request $request)
     {
         $this->validate($request, [
             'name' => 'required|max:225',
